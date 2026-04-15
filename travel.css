@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: orange;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav h1 {
+    color: black;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: black;
+}
+
+#user {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* MAIN SECTION */
+
+.main {
+    background: url("Mount-Fuji-2.webp") no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* important */
+}
+
+.maintext {
+    color: white;
+    text-align: center;
+}
+
+.maintext button {
+    padding: 15px 25px;
+    border: 2px solid orange;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.maintext button:hover {
+    transform: scale(1.1);
+    background: orange;
+    color: black;
+}
+
+.maintext h1,
+button {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: smoothEntry 1.5s ease forwards, glow 2s ease-in-out infinite alternate;
+}
+
+
+/* Entry animation */
+
+@keyframes smoothEntry {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Glow effect */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px white, 0 0 20px orange;
+    }
+    to {
+        text-shadow: 0 0 20px orange, 0 0 30px white;
+    }
+}
+
+
+/* HEADINGS */
+
+.head {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.head span {
+    color: orange;
+}
+
+
+/* BOOKING */
+
+.booking {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.booking img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.form {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+}
+
+.form input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background: black;
+}
+
+
+/* PACKAGES */
+
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 300px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+}
+
+.card h3,
+.card p {
+    margin: 10px;
+}
+
+.card::after {
+    content: "Click to Book";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+
+/* PLACES */
+
+.places {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.placecard {
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.placecard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.placecard img {
+    width: 100%;
+    height: 200px;
+    transition: 0.4s;
+}
+
+.placecard:hover img {
+    transform: scale(1.1);
+}
+
+.placecard h3,
+.placecard p {
+    margin: 10px;
+}
+
+.placecard::after {
+    content: "Click to Book";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.placecard:hover::after {
+    opacity: 1;
+}
+
+
+/* CONTACT */
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+}
+
+.contact img {
+    width: 340px;
+}
+
+.contactform {
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px gray;
+    height: 90%;
+}
+
+.contactform input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.contactform button {
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.text {
+    margin: 10px;
+}
+
+
+/* LOGIN POPUP */
+
+.loginpage {
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+}
+
+.active1 {
+    display: block;
+}
+
+.activeCard {
+    border: 2px solid orange;
+    transform: scale(1.05);
+}
+
+.loginpage input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.loginpage button {
+    width: 100%;
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+    ul {
+        display: none;
+    }
+    .booking img {
+        width: 90%;
+    }
+    .contact img {
+        width: 90%;
+    }
+}
